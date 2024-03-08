@@ -690,3 +690,6 @@ namespace REL
 #include "RE/msvc/functional.h"
 #include "RE/msvc/memory.h"
 #include "RE/msvc/typeinfo.h"
+#include "Misc.h"
+#include "BSCoreTypes.h"
+#include "Offsets.h"

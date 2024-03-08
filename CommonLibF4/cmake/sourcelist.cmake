@@ -252,4 +252,8 @@ set(SOURCES
 	src/RE/NetImmerse/NiRect.cpp
 	src/RE/Scaleform/GFx/GFx_Player.cpp
 	src/REL/Relocation.cpp
+	include/Misc.h
+	src/Misc.cpp
+	include/BSCoreTypes.h
+	include/Offsets.h
 )

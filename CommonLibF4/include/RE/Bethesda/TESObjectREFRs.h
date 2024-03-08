@@ -359,6 +359,50 @@ namespace RE
 
 		struct RemoveItemData;
 
+		struct RecordFlags
+		{
+			enum RecordFlag : std::uint32_t
+			{
+				kIsGroundPiece = 1 << 4,
+				kCollisionsDisabled = 1 << 4,  // ?
+
+				kDeleted = 1 << 5,
+				kHiddenFromLocalMap = 1 << 6,  // TESObjectSTAT
+				kTurnOffFire = 1 << 7,
+
+				kInaccessible = 1 << 8,            // TESObjectDOOR
+				kLODRespectsEnableState = 1 << 8,  // TESObjectSTAT
+				kStartsDead = 1 << 8,              // TESNPC
+				kDoesntLightWater = 1 << 8,
+
+				kMotionBlur = 1 << 9,  // TESObjectSTAT
+				kPersistent = 1 << 10,
+				kInitiallyDisabled = 1 << 11,
+				kIgnored = 1 << 12,
+
+				kStartUnconscious = 1 << 13,  // TESNPC
+				kSkyMarker = 1 << 13,
+				kHarvested = 1 << 13,  // TESObjectTREE
+
+				kIsFullLOD = 1 << 16,   // Actor
+				kNeverFades = 1 << 16,  // TESObjectLIGH
+
+				kDoesntLightLandscape = 1 << 17,
+
+				kNoAIAcquire = 1 << 25,
+				kCollisionGeometry_Filter = 1 << 26,
+				kCollisionGeometry_BoundingBox = 1 << 27,
+				kReflectedByAutoWater = 1 << 28,
+
+				kDontHavokSettle = 1 << 29,
+
+				kGround = 1 << 30,
+				kRespawns = 1 << 30,
+
+				kMultibound = (std::uint32_t)1 << 31
+			};
+		};
+
 		F4_HEAP_REDEFINE_NEW(TESObjectREFR);
 
 		// add
@@ -486,6 +530,9 @@ namespace RE
 		virtual BGSDecalGroup* GetDecalGroup() const;                                                                                                                                                                                                 // C3
 		virtual void InitDefaultWornImpl(bool a_weapon, bool a_allowChanges);                                                                                                                                                                         // C4
 		virtual bool HasKeywordHelper(const BGSKeyword* a_keyword, const TBO_InstanceData* a_data) const;                                                                                                                                             // C5
+
+		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
+		static bool LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 
 		void FindAndWriteStackDataForInventoryItem(
 			TESBoundObject* a_object,

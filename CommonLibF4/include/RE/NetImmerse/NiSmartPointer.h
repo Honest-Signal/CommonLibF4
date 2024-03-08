@@ -128,6 +128,11 @@ namespace RE
 
 		[[nodiscard]] explicit operator bool() const noexcept { return _ptr != nullptr; }
 
+		inline operator T*() const
+		{
+			return m_pObject;
+		}
+
 	protected:
 		template <class>
 		friend class NiPointer;

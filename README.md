@@ -19,3 +19,5 @@
 
 ### Development
 * [Address Library for F4SE Plugins](https://www.nexusmods.com/fallout4/mods/47327)
+
+This fork exists mainly to help port over World Randomizer to Fallout 4. In the process I am adding whatever I need from [CommonLibSSE](https://github.com/Ryan-rsm-McKenzie/CommonLibSSE), mostly.
