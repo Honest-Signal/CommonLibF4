@@ -2,3 +2,5 @@
 /.vscode
 /cmake-build*
 /build*
+/.vs*
+/WRF4Plugin*
