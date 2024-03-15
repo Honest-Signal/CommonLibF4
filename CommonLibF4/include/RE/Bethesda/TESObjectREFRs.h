@@ -534,6 +534,9 @@ namespace RE
 		static NiPointer<TESObjectREFR> LookupByHandle(RefHandle a_refHandle);
 		static bool LookupByHandle(RefHandle a_refHandle, NiPointer<TESObjectREFR>& a_refrOut);
 
+		ObjectRefHandle GetHandle() { return ObjectRefHandle(this); }
+		virtual bool IsPersistent() const { return (GetFormFlags() & RecordFlags::kPersistent) != 0; }
+
 		void FindAndWriteStackDataForInventoryItem(
 			TESBoundObject* a_object,
 			BGSInventoryItem::StackDataCompareFunctor& a_compareFunc,

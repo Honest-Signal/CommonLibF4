@@ -20,11 +20,11 @@ namespace RE
 		return func(a_handle, a_refrOut);
 	}
 
-	void CreateRefHandle(RefHandle& a_handleOut, TESObjectREFR* a_refTo)
+	void CreateRefHandle(RefHandle& a_handleOut, TESObjectREFR* a_refrTo)
 	{
 		using func_t = decltype(&CreateRefHandle);
 		REL::Relocation<func_t> func{ Offset::CreateRefHandle };
-		return func(a_handleOut, a_refTo);
+		return func(a_handleOut, a_refrTo);
 	}
 
 	void DebugNotification(const char* a_notification, const char* a_soundToPlay, bool a_cancelIfAlreadyQueued)
